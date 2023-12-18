@@ -17,6 +17,14 @@
     font-family: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #7311a3;
+}
+
 body{
     background-color: var(--background-);
     width: 100%;
@@ -97,7 +105,7 @@ a{
 
 .featured-box{
     display: flex;
-    height: 600px;
+    height: 800px;
 }
 
 .left-side{
@@ -202,20 +210,6 @@ a{
 
 /*---about me---*/
 
-.box-style{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    width: 700px;
-    height: 400px;
-    background-color: var(--detalhes-);
-    border-radius: 30px;
-    box-shadow: 0px 1px 5px 3px #8749f2;
-    border-style: solid 10px #fff;
-}
-
 .left-text-box{
     display: flex;
     align-items: center;
@@ -223,7 +217,45 @@ a{
     flex-direction: column;
     width: 100%;
     color: var(--letra-basica);
-    font-size:20px;
+}
+
+.box-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    width: 700px;
+    height: 400px;
+    border-radius: 30px;
+    background-color: var(--background-);
+}
+
+.box-style::before, .box-style::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: linear-gradient(45deg, #8257E6, #7311a3, #7311a3, #8257E6, #7311a3, #7311a3);
+    border-radius: 40px;
+    background-size: 300%;
+    animation: AnimaBorda 8s linear infinite;
+}
+
+@keyframes AnimaBorda{
+    0%{
+        background-position: 0;
+    }
+
+    100%{
+        background-position: 300%;
+    }
+}
+
+.box-style::after{
+    filter: blur(20px);
 }
 
 .title-about-me{
@@ -235,6 +267,7 @@ a{
     font-style: bold;
     font-weight: 500;
     margin:10px;
+    font-size: 20px;
 }
 
 .text-about-me{
@@ -243,6 +276,7 @@ a{
     justify-content: center;
     color: var(--letra-basica);
     text-align: center;
+    font-size: 20px;
 }
 
 .icon-box{
@@ -250,13 +284,18 @@ a{
     align-items: center;
     justify-content: center;
     position: absolute;
-    margin-top: 400px;
+    margin-top: 550px;
     border-radius: 20px;
     gap: 50px;
     width: 600px;
     height: 50px;
     box-shadow: 0px 1px 5px 3px #8749f2;
-    background-color: #8257E6;
+    background: none;
+    transition: ease 0.5s;
+}
+
+.icon-box:hover{
+    transform: scale(1.1, 1.1);
 }
 
 /*---projects---*/
@@ -278,18 +317,17 @@ a{
     color: var(--letra-basica);
     font:500;
     font-size: 50px;
-    margin-bottom: 70px;
 }
 
 .featured-my-projects{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 1400px;
-    height: 600px;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
 }
 
-.project{
+.project-1{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,6 +335,17 @@ a{
     background-color: #fff;
     width: 450px;
     height: 250px;
+    transition: 0.5s;
+}
+
+.project:hover{
+    width: 100px;
+}
+
+.project img{
+    width: 450px;
+    height: 250px;
+    opacity: 0.9;
 }
 
 .project::after{
@@ -310,11 +359,15 @@ a{
 }
 
 .text-project{
-    color: var(--text-);
+    color: var(--letra-basica);
     font: 500;
     font-size: 35px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+    position: absolute;
+    font-weight: 500;
+    font-size: 30px;
+
 }
 
 
