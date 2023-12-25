@@ -48,6 +48,37 @@ body{
     width: 100%;
 }
 
+.mobile-menu-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.menu-lines{
+
+    position: absolute;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+}
+
+.menu-lines span{
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
 .nav::after{
     content: "";
     display: block;
@@ -551,5 +582,80 @@ input:checked + label .descripition{
 
     .right-side img{
         width: 400px;
+    }
+}
+
+@media only screen and (max-width: 675px){
+    .featured-box{
+        height: 600px;
+    }
+
+    .home-container{
+        height: 600px;
+        justify-content: flex-start;
+        margin-top: 100px;
+    }
+
+    .right-side img{
+        width: 250px;
+        
+    }
+
+    .hello{
+        font-size: 25px;
+    }
+
+    .my-name{
+        font-size: 25px;
+    }
+
+    .officer{
+        font-size: 20px;
+    }
+
+    .box-style{
+        width: 500px;
+    }
+
+    .icon-box{
+        width: 400px;
+    }
+
+    .video{
+        width: 350px;
+        height: 200px;
+    }
+
+    .about-project{
+        width: 550px;
+        height: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+        
+    .nav-list{
+        display: none;
+    }
+
+    .logo{
+
+    }
+
+    .mobile-menu-button{
+        display: block;
+    }
+
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 16px;
+    }
+
+    .mobile-menu .nav-list{
+        display: block;
+
     }
 }
